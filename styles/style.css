@@ -1,5 +1,306 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-image: url('../images/cover-image-dark.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.text{
+  color: var(--color-contrast);
+  line-height: 1.3;
+}
+
+.link{
+  text-shadow: 2px 2px 0px var(--color-primary);
+}
+
+.link:hover{
+  border-bottom: solid 1px var(--color-contrast);
+}
+
+.link:focus-visible{
+  border: solid 1px var(--color-contrast);
+}
+
+.main{
+  gap: var(--space-l);
+}
+
+/* Header */
+.header {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  bottom: var(--space-s);
+  left: var(--space-s);
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-s);
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--color-primary);
+  border-right: 1px solid var(--color-primary);
+}
+
+.main-title-decor{
+  text-shadow: 4px 4px 0px var(--color-primary);
+  font-size: var(--font-size-large);
+  color: var(--color-additional);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-line-height-large);
+  margin-inline: var(--space-s);
+}
+
+.header__rec {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-s);
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.header__rec::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 4px 2px var(--color-primary);
+  margin: var(--space-xs);
+}
+
+.header__theme-menu{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-inline: var(--space-s);
+}
+
+.header__theme-menu-list{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.header__theme-menu-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: transparent;
+  box-shadow: none;
+  inline-size: 70px;
+  block-size: 26px;
+  text-transform: lowercase;
+}
+.header__theme-menu-button:hover{
+  border: 1px solid hsl(from var(--color-primary) h s l / 0.4);
+}
+
+.header__theme-menu-button:focus-visible{
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.header__theme-menu-button_active{
+  color: var(--color-primary);
+  border: solid 1px var(--color-primary);
+}
+
+.header__subtitle{
+  font-weight: var(--font-weight-bold);
+  align-self: center;
+  justify-self: end;
+  max-inline-size: 491px;
+  margin-inline: var(--space-s);
+}
+
+.section{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  margin-inline: var(--space-s);
+}
+.section:not(:first-child){
+  margin-top: var(--space-xl);
+}
+
+
+.section__title {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.section__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap:  var(--space-xs);
+}
+
+.card__title{
+  font-weight: var(--font-weight-bold);
+}
+
+.section__subtitle{
+  font-weight: var(--font-weight-bold);
+
+}
+
+.card__text {
+  color: var(--color-contrast);
+}
+
+.title-decor{
+  background-color: var(--color-primary);
+  line-height: 23px;
+  color: var(--color-secondary);
+  height: fit-content;
+}
+
+
+.what {
+
+}
+
+.how{
+  
+}
+
+
+.gallery{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-s);
+  margin-inline: var(--space-s);
+  margin-top: var(--space-xl);
+}
+
+.gallery__images{
+  inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+}
+
+.footer{
+  min-height: 100dvh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-l)
+}
+
+@media (width >= 768px){
+  .main-title-decor{
+    margin: 0;
+  }
+  .why{
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-m);
+  }
+  .what{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+    gap: var(--space-m);
+  }
+  .what .section__title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .what .section__content {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 2;
+  }
+  .how{
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-m);
+  }
+  .how .section__title {
+    grid-column: 1;
+  }
+  .how .section__content {
+    grid-column: 2;
+  }
+  .gallery{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:
+    min-content
+    clamp(192px, 25vw, 260px)
+    clamp(230px, 30vw, 315px)
+    clamp(318px, 41vw, 433px);
+  }
+  .gallery__images{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery .card__title{
+    grid-row: 1;
+    grid-column: 1/4;
+  }
+  .gallery__image--wide{
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+  .gallery__image--tall{
+    grid-column: 3;
+    grid-row: 2/4;
+  }
+  .gallery__image--center{
+    grid-column: 2;
+    grid-row: 3;
+    
+  }.gallery__image--tall-bottom{
+    grid-column: 1;
+    grid-row: 3/5;
+    
+  }.gallery__image--wide-bottom{
+    grid-column: 2/4;
+    grid-row: 4;
+  }
+}
+@media (width >= 1024px){
+  .what{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+    gap: var(--space-m);
+  }
+  .what .section__title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .what .section__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

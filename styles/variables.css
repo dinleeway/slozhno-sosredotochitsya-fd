@@ -2,3 +2,43 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root{
+/*Typography*/
+  --font-family: 'IBM Plex Mono', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-base: 18px;
+  --font-size-large: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-line-height-base: 23.4px;
+  --font-line-height-large: 83%;
+
+/* Colors */
+  --color-primary: #FF0070;
+  --color-secondary: #000028;
+  --color-contrast: #F1B2CE;
+  --color-additional: #DB00FF;
+
+/*Spaces*/
+  --space-xs: 10px;
+  --space-s: 10px;
+  --space-m: 20px;
+  --space-l: 40px;
+  --space-xl: 50px;
+
+}
+
+@media (width >= 768px){
+  :root{
+    --space-s: 20px;
+    --space-l: 60px;
+    --space-xl: 80px;
+    --font-size-large: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+@media (width >= 1024px){
+  :root{
+    --space-s: 20px;
+    --space-l: 80px;
+    --font-size-large: 157px;
+  }
+}
