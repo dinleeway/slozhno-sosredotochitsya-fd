@@ -3,13 +3,8 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.page {
-  background-image: url('../images/cover-image-dark.png');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+:root.theme-dark .header__rec {
+  display: inline-flex;
 }
 
 :root.theme-dark {
@@ -21,5 +16,19 @@
   --color-secondary: #000028;
   --color-contrast: #F1B2CE;
   --color-additional: #DB00FF;
+  --bg-image: url('../images/cover-image-dark.png');
   
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #FF0070;
+    --color-secondary: #000028;
+    --color-contrast: #F1B2CE;
+    --color-additional: #DB00FF;
+    --bg-image: url('../images/cover-image-dark.png');
+  }
+  .header__rec {
+    display: inline-flex;
+  }
 }

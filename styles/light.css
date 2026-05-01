@@ -3,13 +3,8 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.page {
-  background-image: url('../images/cover-image-light.png');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+:root.theme-light .header__rec{
+  display: none;
 }
 
 :root.theme-light {
@@ -17,11 +12,28 @@
 /* Colors */
   --color-primary: #FF8DCB;
   --color-secondary: #353430;
-  --color-contrast: ##353430;
+  --color-contrast: #353430;
   --color-additional: #FFC2E6;
+
+  --bg-image: url('../images/cover-image-light.png');
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
 
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-primary: #FF8DCB;
+    --color-secondary: #353430;
+    --color-contrast: #353430;
+    --color-additional: #FFC2E6;
+
+    --bg-image: url('../images/cover-image-light.png');
+  }
+  .header__rec{
+    display: none;
+  }
+  
 }

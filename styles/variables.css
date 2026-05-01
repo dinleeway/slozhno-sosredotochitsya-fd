@@ -17,6 +17,7 @@
   --color-secondary: #000028;
   --color-contrast: #F1B2CE;
   --color-additional: #DB00FF;
+  --bg-image: url('../images/cover-image-dark.png');
 
 /*Spaces*/
   --space-xs: 10px;
@@ -38,7 +39,7 @@
 @media (width >= 1024px){
   :root{
     --space-s: 20px;
-    --space-l: 80px;
+    --space-l: 60px;
     --font-size-large: 157px;
   }
 }
