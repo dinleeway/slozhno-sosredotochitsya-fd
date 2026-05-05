@@ -4,7 +4,7 @@
 */
 :root {
   /*Typography*/
-  --font-family: "IBM Plex Mono", sans-serif;
+  --font-family: "IBM Plex Mono", monospace;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --font-size-base: 18px;
